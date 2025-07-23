@@ -24,13 +24,13 @@
     <link rel="stylesheet" href="./calc.css">
 </head>
 
-<body id="darkbody" onload="updateUnits()" class=" d-flex justify-content-center align-items-center flex-column">
-    <div id="back" class="body1 border  rounded-5" style="width:452px;height:100vh">
+<body id="darkbody" onload="updateUnits()" class="p-2 d-flex justify-content-center align-items-center flex-column">
+    <div id="back" class="body1 border container-fluid rounded-5" style="max-width: 410px;height:100vh">
         <div class="container-fluid">
-            <div class="row p-3 g-3">
-                <div id="theme" class="col-3 ">Theme:</div>
-                <div id="themeid" class="col-9 d-flex theme1 justify-content-center align-items-center border  rounded-4 p-1">
-                    <button onclick="applyDefaultTheme()" class="btn btn-default btn-outline-dark rounded-5">Light</button>
+            <div class="row p-2 g-3">
+                <div id="theme" class="col-12 col-md-3 ">Theme:</div>
+                <div id="themeid" class="col-12 col-md-9 d-flex theme1 justify-content-center align-items-center border  rounded-4 p-1 gap-2">
+                    <button onclick="applyDefaultTheme()" class="btn btn-default btn-outline-dark rounded-5 ">Light</button>
                     <button onclick="applyDarkTheme()"class="btn btn-default btn-outline-dark rounded-5">Dark</button>
                     <button onclick="applyAnimatedTheme()" class="btn btn-default btn-outline-dark rounded-5">Animated</button>
                 </div>
@@ -47,13 +47,13 @@
                 <div id="calculator-section">
                     <div class="row">
                         <div class="col-3 d-flex justify-content-center align-items-center flex-column"><img
-                                class="animate-bounce" src="./image/Screenshot_2025-07-22_133445-removebg-preview.png"
+                                class="animate-bounce img-fluid" src="./image/Screenshot_2025-07-22_133445-removebg-preview.png"
                                 alt=""></div>
                         <div class="col-9 d-flex justify-content-center align-items-center flex-column">
-                            <h1 id="darkh1" class="text-white">Calculator</h1>
+                            <h1 id="darkh1" class="text-white h3 h-sm-2 h-md-1">Calculator</h1>
                         </div>
                     </div>
-                    <div class="row   p-2">
+                    <div class="row p-1">
                         <div class="col">
                             <input type="text" class="form-control" readonly />
                         </div>
@@ -186,10 +186,10 @@
                 <div id="unit-section"  style="display:none">
                     <div class="row">
                         <div class="col-3 d-flex justify-content-center align-items-center flex-column"><img
-                                class="animate-bounce" src="./image/unit-convert.png" alt="" width="80px" height="50px">
+                                class="img-fluid animate-bounce" src="./image/unit-convert.png" alt="" width="80px" height="50px">
                         </div>
                         <div class="col-9 d-flex justify-content-center align-items-center flex-column">
-                            <h1 class="text-white">Unit Convertor</h1>
+                            <h1 class="text-white h3 h-sm-2 h-md-1">Unit Convertor</h1>
                         </div>
                     </div>
                     <div class="mt-4 d-flex justify-content-center align-items-center flex-column">
@@ -219,11 +219,11 @@
                 <div id="currency-section" style="display:none">
                     <div class="row">
                         <div class="col-3 d-flex justify-content-center align-items-center flex-column"><img
-                                class="animate-bounce"
+                                class="img-fluid animate-bounce"
                                 src="https://images-eu.ssl-images-amazon.com/images/I/510WmeXkLXL.png" width="40px"
                                 height="40px" alt=""></div>
                         <div class="col-9 d-flex justify-content-center align-items-center flex-column">
-                            <h1 class="text-white">Currency Convertor</h1>
+                            <h1 class="text-white h3 h-sm-2 h-md-1">Currency Convertor</h1>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center align-items-center flex-column">
