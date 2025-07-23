@@ -1,0 +1,60 @@
+*{
+    font-family: "Poetsen One", sans-serif;
+}
+  .body-ligh{
+    background-color:  #f2dae3;
+  }
+  .body-dark{
+    background-color: #3a3434ff
+  }
+  .light-btn {
+         /* light pink */
+     background-color:#f1c2d3;
+    color: black;
+    border: none;
+  }
+
+  .light-btn:hover {
+    background-color: #ce909b; 
+  }
+  /* .themebg{
+     background-color: #f2dae3;
+  } */
+  .theme-light{
+    background-color: #f2dae3;
+  }
+  .theme-dark{
+    background-color: #8b8888ff;
+  }
+  .theme-animated{
+      background-image: linear-gradient(to right, #91ade3, #1a69f1);
+      
+  }
+  .dark-btn{
+     background-color:#98a4a8fd;
+    color: black;
+    border: none;
+  }
+  .dark-btn:hover{
+    background-color: rgb(32, 32, 32);
+  }
+  .animated-body {
+    background-image: linear-gradient(to right, #91ade3, #1a69f1);
+}
+.animated-btn{
+  background-image: linear-gradient(to right, #30cef1, #11b9f1);
+  border: none;
+}
+.animated-btn:hover{
+  background-image: linear-gradient(to right, #47d3f2, #054b62);
+  border: none;
+}
+.light-body1{
+background-color:#f0b0c7 ;
+}
+.dark-body1{
+background-color:#030202ff ;
+}
+.animated-body1{
+  background-image: linear-gradient(to right, #a1c4fd, #c2e9fb); 
+}
