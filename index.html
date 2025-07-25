@@ -25,7 +25,7 @@
 </head>
 
 <body id="darkbody" onload="updateUnits()" class="p-2 d-flex justify-content-center align-items-center flex-column">
-    <div id="back" class="body1 border container-fluid rounded-5" style="max-width: 410px;height:100vh">
+    <div id="back" class="p-2 body1 border container-fluid rounded-5" style="max-width: 410px; min-height: 80vh; height: auto;">
         <div class="container-fluid">
             <div class="row p-2 g-3">
                 <div id="theme" class="col-12 col-md-3 ">Theme:</div>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="row p-1">
                         <div class="col">
-                            <input type="text" class="form-control" readonly />
+                            <input id="result" style="text-align:right" placeholder="0" type="text" class="form-control" readonly />
                         </div>
                     </div>
                     <div class="row p-1 gx-3 ">
@@ -75,104 +75,141 @@
                     </div>
                     <div class="row p-1 gx-3 ">
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">%</button>
+                            <button onclick="display('ln')" class="btn btn-default btn-outline-dark w-100">ln</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">sin</button>
+                            <button onclick="display('(')" class="btn btn-default btn-outline-dark w-100">(</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button class="btn  btn-default btn-outline-dark w-100">cos</button>
+                            <button onclick="display(')')" class="btn btn-default btn-outline-dark w-100">)</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">tan</button>
+                            <button onclick="display('!')" class="btn btn-default btn-outline-dark w-100">!</button>
                         </div>
 
                     </div>
                     <div class="row p-1 gx-3 ">
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">log</button>
-                        </div>
-                        <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">√</button>
+                            <button onclick="display('sin⁻¹(')" class="btn btn-default btn-outline-dark w-100">sin⁻¹</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">x <sup>y</sup></button>
+                            <button onclick="display('cos⁻¹(')" class="btn btn-default btn-outline-dark w-100">cos⁻¹</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">π</button>
+                            <button onclick="display('tan⁻¹(')" class="btn btn-default btn-outline-dark w-100">tan⁻¹</button>
                         </div>
 
                     </div>
                     <div class="row p-1 gx-3 ">
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">e</button>
-                        </div>
-                        <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">7</button>
+                            <button id="degBtn" onclick="setMode('deg')" class="btn btn-default btn-outline-dark w-100">Deg</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">8</button>
+                            <button id="radBtn" onclick="setMode('rad')" class="btn btn-default btn-outline-dark w-100">Rad</button>
+                        </div>
+                        
+
+                    </div>
+                    <div class="row p-1 gx-3 ">
+                        <div class="col  rounded-2 text-center">
+                            <button class="btn btn-default btn-calc btn-outline-dark w-100">%</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">9</button>
+                            <button onclick="display('sin')" class="btn btn-default btn-calc btn-outline-dark w-100">sin</button>
+                        </div>
+                        <div class="col rounded-2 text-center">
+                            <button onclick="display('cos')" class="btn  btn-default btn-calc btn-outline-dark w-100">cos</button>
+                        </div>
+                        <div class="col  rounded-2 text-center">
+                            <button onclick="display('tan')" class="btn btn-default btn-calc btn-outline-dark w-100">tan</button>
                         </div>
 
                     </div>
                     <div class="row p-1 gx-3 ">
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">/</button>
+                            <button onclick="display('log')" class="btn btn-default btn-calc btn-outline-dark w-100">log</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">4</button>
+                            <button onclick="display('√')" class="btn btn-default btn-calc btn-outline-dark w-100">√</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">5</button>
+                            <button onclick="display('**')" class="btn btn-default btn-calc btn-outline-dark w-100">xʸ</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">6</button>
+                            <button onclick="display('π')" class="btn btn-default btn-calc btn-outline-dark w-100">π</button>
                         </div>
 
                     </div>
                     <div class="row p-1 gx-3 ">
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">*</button>
+                            <button onclick="display('e')" class="btn btn-default btn-calc btn-outline-dark w-100">e</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">1</button>
+                            <button onclick="display(7)" class="btn btn-default btn-outline-dark w-100">7</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">2</button>
+                            <button onclick="display(8)" class="btn btn-default btn-outline-dark w-100">8</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">3</button>
+                            <button onclick="display(9)" class="btn btn-default btn-outline-dark w-100">9</button>
+                        </div>
+
+                    </div>
+                    <div class="row p-1 gx-3 ">
+                        <div class="col  rounded-2 text-center">
+                            <button onclick="display('/')" class="btn btn-default btn-outline-dark w-100">/</button>
+                        </div>
+                        <div class="col  rounded-2 text-center">
+                            <button onclick="display(4)" class="btn btn-default btn-outline-dark w-100">4</button>
+                        </div>
+                        <div class="col rounded-2 text-center">
+                            <button onclick="display(5)" class="btn btn-default btn-outline-dark w-100">5</button>
+                        </div>
+                        <div class="col  rounded-2 text-center">
+                            <button onclick="display(6)" class="btn btn-default btn-outline-dark w-100">6</button>
+                        </div>
+
+                    </div>
+                    <div class="row p-1 gx-3 ">
+                        <div class="col  rounded-2 text-center">
+                            <button onclick="display('*')" class="btn btn-default btn-outline-dark w-100">*</button>
+                        </div>
+                        <div class="col  rounded-2 text-center">
+                            <button onclick="display(1)" class="btn btn-default btn-outline-dark w-100">1</button>
+                        </div>
+                        <div class="col rounded-2 text-center">
+                            <button onclick="display(2)" class="btn btn-default btn-outline-dark w-100">2</button>
+                        </div>
+                        <div class="col  rounded-2 text-center">
+                            <button onclick="display(3)" class="btn btn-default btn-outline-dark w-100">3</button>
                         </div>
 
                     </div>
                     <div class="row p-1  ">
                         <div class="col  rounded-2 text-center">
-                            <button class="btn  btn-default btn-outline-dark w-100">-</button>
+                            <button onclick="display('-')" class="btn  btn-default btn-outline-dark w-100">-</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">0</button>
+                            <button onclick="display(0)" class="btn btn-default btn-outline-dark w-100">0</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">.</button>
+                            <button onclick="display('.')" class="btn btn-default btn-outline-dark w-100">.</button>
                         </div>
 
 
                     </div>
                     <div class="row p-1  ">
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">=</button>
+                            <button onclick="equal()" class="btn btn-default btn-outline-dark w-100">=</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">+</button>
+                            <button onclick="display('+')" class="btn btn-default btn-outline-dark w-100">+</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">c</button>
+                            <button onclick="clearAll()" class="btn btn-default btn-outline-dark w-100">AC</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button class="btn btn-default btn-outline-dark w-100">
+                            <button onclick="Back()" class="btn btn-default btn-outline-dark w-100">
                                 <i class="fa-solid fa-delete-left fa-xl"></i>
                             </button>
                         </div>
@@ -268,5 +305,5 @@
     </div>
 </body>
 <script src="./calc.js"></script>
-
+<script src="./calculatorf.js"></script>
 </html>
