@@ -4,6 +4,7 @@
     document.getElementById('calculator-section').style.display = 'none';
     document.getElementById('unit-section').style.display = 'none';
     document.getElementById('currency-section').style.display = 'none';
+    document.getElementById('currency-note').style.display = 'block';
 
     // Show selected
     document.getElementById(section + '-section').style.display = 'block';

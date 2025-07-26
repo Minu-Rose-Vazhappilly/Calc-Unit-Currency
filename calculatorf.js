@@ -13,7 +13,12 @@ function setMode(selectedMode) {
 }
 
 function display(num) {
+    if(num=="sin⁻¹(" || num=="cos⁻¹(" || num=="tan⁻¹("){
+        document.getElementById("degBtn").disabled = true;
+        document.getElementById("radBtn").disabled = false;
+    }
     result.value += num;
+
 }
 
 function clearAll() {
@@ -30,61 +35,7 @@ function factorial(n) {
     return n * factorial(n - 1);
 }
 
-// function equal() {
-//     try {
-//         let expression = result.value;
-//         let matches = expression.match(/\d+!/g);  // ["5!", "3!"]
-//         matches.forEach(factStr => {
-//             let num = parseInt(factStr);         // num = 5 (from "5!")
-//             expression = expression.replace(factStr, `factorial(${num})`);
-//         });
 
-//         // Step 1: Handle inverse trig functions FIRST
-//         expression = expression
-//             .replace(/sin⁻¹\(([^)]+)\)/g, function (match, value) {
-//                 return `(Math.asin(${value}) * 180 / Math.PI)`;
-//             })
-//             .replace(/cos⁻¹\(([^)]+)\)/g, function (match, value) {
-//                 return `(Math.acos(${value}) * 180 / Math.PI)`;
-//             })
-//             .replace(/tan⁻¹\(([^)]+)\)/g, function (match, value) {
-//                 return `(Math.atan(${value}) * 180 / Math.PI)`;
-//             });
-
-//         // Step 2: Replace trig functions
-//         if (mode === "deg") {
-//             expression = expression
-//                 .replace(/sin\(([^)]+)\)/g, (match, val) => `Math.sin((${val}) * Math.PI / 180)`)
-//                 .replace(/cos\(([^)]+)\)/g, (match, val) => `Math.cos((${val}) * Math.PI / 180)`)
-//                 .replace(/tan\(([^)]+)\)/g, (match, val) => `Math.tan((${val}) * Math.PI / 180)`);
-//         } else {
-//             expression = expression
-//                 .replace(/sin/g, "Math.sin")
-//                 .replace(/cos/g, "Math.cos")
-//                 .replace(/tan/g, "Math.tan");
-//         }
-
-//         // Step 3: Replace other math functions
-//         expression = expression
-//             .replace(/√/g, "Math.sqrt")
-//             .replace(/log/g, "Math.log10")
-//             .replace(/ln/g, "Math.log");
-
-//         // Step 4: Replace constants
-//         expression = expression
-//     .replace(/π/g, Math.PI.toString())
-//     .replace(/e/g, Math.E.toString()); // use \b to match only standalone 'e'
-
-//         // Step 5: Power and percentage
-//         expression = expression.replace(/xʸ/g, "**").replace(/%/g, "/100");
-
-//         // Final: Evaluate
-//         result.value = parseFloat(eval(expression).toFixed(10));
-//     } catch (error) {
-//         result.value = "Error";
-//         setTimeout(() => (result.value = ""), 1000);
-//     }
-// }
 function equal() {
     try {
         let expression = result.value;
@@ -106,6 +57,7 @@ function equal() {
             const val = eval(value);
             return Math.sqrt(val).toFixed(10);
         });
+        
         expression = expression.replace(/sin⁻¹\s*\(([^)]+)\)/g, (match, value) => {
             const val = eval(value);
             return (Math.asin(val) * 180 / Math.PI).toFixed(10);

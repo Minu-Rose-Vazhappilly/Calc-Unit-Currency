@@ -25,37 +25,46 @@
 </head>
 
 <body id="darkbody" onload="updateUnits()" class="p-2 d-flex justify-content-center align-items-center flex-column">
-    <div id="back" class="p-2 body1 border container-fluid rounded-5" style="max-width: 410px; min-height: 80vh; height: auto;">
+    <div id="back" class="p-2 body1 border container-fluid rounded-5"
+        style="max-width: 410px; min-height: 80vh; height: auto;">
         <div class="container-fluid">
             <div class="row p-2 g-3">
                 <div id="theme" class="col-12 col-md-3 ">Theme:</div>
-                <div id="themeid" class="col-12 col-md-9 d-flex theme1 justify-content-center align-items-center border  rounded-4 p-1 gap-2">
-                    <button onclick="applyDefaultTheme()" class="btn btn-default btn-outline-dark rounded-5 ">Light</button>
-                    <button onclick="applyDarkTheme()"class="btn btn-default btn-outline-dark rounded-5">Dark</button>
-                    <button onclick="applyAnimatedTheme()" class="btn btn-default btn-outline-dark rounded-5">Animated</button>
+                <div id="themeid"
+                    class="col-12 col-md-9 d-flex theme1 justify-content-center align-items-center border  rounded-4 p-1 gap-2">
+                    <button onclick="applyDefaultTheme()"
+                        class="btn btn-default btn-outline-dark rounded-5 ">Light</button>
+                    <button onclick="applyDarkTheme()" class="btn btn-default btn-outline-dark rounded-5">Dark</button>
+                    <button onclick="applyAnimatedTheme()"
+                        class="btn btn-default btn-outline-dark rounded-5">Animated</button>
                 </div>
             </div>
             <div class="d-flex justify-content-center align-items-center  row ">
-                <div class="col-4"><button onclick="showSection('calculator')" type="button" class="btn btn-outline-dark rounded-top btn-default dark-btn"
+                <div class="col-4"><button onclick="showSection('calculator')" type="button"
+                        class="btn btn-outline-dark rounded-top btn-default dark-btn"
                         style="width:100px;height:55px;">Calculator</button></div>
-                <div class="col-4"><button onclick="showSection('unit')" type="button" class="btn btn-outline-dark rounded-top btn-default dark-btn" style="width:100px;height:55px;">Unit
+                <div class="col-4"><button onclick="showSection('unit')" type="button"
+                        class="btn btn-outline-dark rounded-top btn-default dark-btn"
+                        style="width:100px;height:55px;">Unit
                         Convertor</button></div>
-                <div class="col-4"><button onclick="showSection('currency')" type="button" class="btn btn-outline-dark rounded-top btn-default dark-btn">Currency
+                <div class="col-4"><button onclick="showSection('currency')" type="button"
+                        class="btn btn-outline-dark rounded-top btn-default dark-btn">Currency
                         Converter</button></div>
             </div>
             <div class="mt-3">
                 <div id="calculator-section">
                     <div class="row">
                         <div class="col-3 d-flex justify-content-center align-items-center flex-column"><img
-                                class="animate-bounce img-fluid" src="./image/Screenshot_2025-07-22_133445-removebg-preview.png"
-                                alt=""></div>
+                                class="animate-bounce img-fluid"
+                                src="./image/Screenshot_2025-07-22_133445-removebg-preview.png" alt=""></div>
                         <div class="col-9 d-flex justify-content-center align-items-center flex-column">
                             <h1 id="darkh1" class="text-white h3 h-sm-2 h-md-1">Calculator</h1>
                         </div>
                     </div>
                     <div class="row p-1">
                         <div class="col">
-                            <input id="result" style="text-align:right" placeholder="0" type="text" class="form-control" readonly />
+                            <input id="result" style="text-align:right" placeholder="0" type="text" class="form-control"
+                                readonly />
                         </div>
                     </div>
                     <div class="row p-1 gx-3 ">
@@ -90,59 +99,73 @@
                     </div>
                     <div class="row p-1 gx-3 ">
                         <div class="col  rounded-2 text-center">
-                            <button onclick="display('sin⁻¹(')" class="btn btn-default btn-outline-dark w-100">sin⁻¹</button>
+                            <button onclick="display('sin⁻¹(')"
+                                class="btn btn-default btn-outline-dark w-100">sin⁻¹</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button onclick="display('cos⁻¹(')" class="btn btn-default btn-outline-dark w-100">cos⁻¹</button>
+                            <button onclick="display('cos⁻¹(')"
+                                class="btn btn-default btn-outline-dark w-100">cos⁻¹</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button onclick="display('tan⁻¹(')" class="btn btn-default btn-outline-dark w-100">tan⁻¹</button>
+                            <button onclick="display('tan⁻¹(')"
+                                class="btn btn-default btn-outline-dark w-100">tan⁻¹</button>
                         </div>
 
                     </div>
                     <div class="row p-1 gx-3 ">
                         <div class="col  rounded-2 text-center">
-                            <button id="degBtn" onclick="setMode('deg')" class="btn btn-default btn-outline-dark w-100">Deg</button>
+                            <button id="degBtn" onclick="setMode('deg')"
+                                class="btn btn-default btn-outline-dark w-100">Deg</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button id="radBtn" onclick="setMode('rad')" class="btn btn-default btn-outline-dark w-100">Rad</button>
+                            <button id="radBtn" onclick="setMode('rad')"
+                                class="btn btn-default btn-outline-dark w-100">Rad</button>
                         </div>
-                        
+
 
                     </div>
                     <div class="row p-1 gx-3 ">
                         <div class="col  rounded-2 text-center">
-                            <button onclick="display('%')" class="btn btn-default btn-calc btn-outline-dark w-100">%</button>
+                            <button onclick="display('%')"
+                                class="btn btn-default btn-calc btn-outline-dark w-100">%</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button onclick="display('sin')" class="btn btn-default btn-calc btn-outline-dark w-100">sin</button>
+                            <button onclick="display('sin')"
+                                class="btn btn-default btn-calc btn-outline-dark w-100">sin</button>
                         </div>
                         <div class="col rounded-2 text-center">
-                            <button onclick="display('cos')" class="btn  btn-default btn-calc btn-outline-dark w-100">cos</button>
+                            <button onclick="display('cos')"
+                                class="btn  btn-default btn-calc btn-outline-dark w-100">cos</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button onclick="display('tan')" class="btn btn-default btn-calc btn-outline-dark w-100">tan</button>
-                        </div>
-
-                    </div>
-                    <div class="row p-1 gx-3 ">
-                        <div class="col  rounded-2 text-center">
-                            <button onclick="display('log')" class="btn btn-default btn-calc btn-outline-dark w-100">log</button>
-                        </div>
-                        <div class="col  rounded-2 text-center">
-                            <button onclick="display('√(')" class="btn btn-default btn-calc btn-outline-dark w-100">√</button>
-                        </div>
-                        <div class="col rounded-2 text-center">
-                            <button onclick="display('**')" class="btn btn-default btn-calc btn-outline-dark w-100">xʸ</button>
-                        </div>
-                        <div class="col  rounded-2 text-center">
-                            <button onclick="display('π')" class="btn btn-default btn-calc btn-outline-dark w-100">π</button>
+                            <button onclick="display('tan')"
+                                class="btn btn-default btn-calc btn-outline-dark w-100">tan</button>
                         </div>
 
                     </div>
                     <div class="row p-1 gx-3 ">
                         <div class="col  rounded-2 text-center">
-                            <button onclick="display('e')" class="btn btn-default btn-calc btn-outline-dark w-100">e</button>
+                            <button onclick="display('log')"
+                                class="btn btn-default btn-calc btn-outline-dark w-100">log</button>
+                        </div>
+                        <div class="col  rounded-2 text-center">
+                            <button onclick="display('√(')"
+                                class="btn btn-default btn-calc btn-outline-dark w-100">√</button>
+                        </div>
+                        <div class="col rounded-2 text-center">
+                            <button onclick="display('**')"
+                                class="btn btn-default btn-calc btn-outline-dark w-100">xʸ</button>
+                        </div>
+                        <div class="col  rounded-2 text-center">
+                            <button onclick="display('π')"
+                                class="btn btn-default btn-calc btn-outline-dark w-100">π</button>
+                        </div>
+
+                    </div>
+                    <div class="row p-1 gx-3 ">
+                        <div class="col  rounded-2 text-center">
+                            <button onclick="display('e')"
+                                class="btn btn-default btn-calc btn-outline-dark w-100">e</button>
                         </div>
                         <div class="col  rounded-2 text-center">
                             <button onclick="display(7)" class="btn btn-default btn-outline-dark w-100">7</button>
@@ -220,10 +243,11 @@
 
 
                 </div>
-                <div id="unit-section"  style="display:none">
+                <div id="unit-section" style="display:none">
                     <div class="row">
                         <div class="col-3 d-flex justify-content-center align-items-center flex-column"><img
-                                class="img-fluid animate-bounce" src="./image/unit-convert.png" alt="" width="80px" height="50px">
+                                class="img-fluid animate-bounce" src="./image/unit-convert.png" alt="" width="80px"
+                                height="50px">
                         </div>
                         <div class="col-9 d-flex justify-content-center align-items-center flex-column">
                             <h1 class="text-white h3 h-sm-2 h-md-1">Unit Convertor</h1>
@@ -264,42 +288,48 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center align-items-center flex-column">
-                                <input type="number" class="form-control w-50 mt-4" placeholder="enter amount">
+                        <input id="cinput" type="number" class="form-control w-50 mt-4" placeholder="enter amount">
                     </div>
-                    
-                       <div class="mt-4 container-fluid">
+
+                    <div class="mt-4 container-fluid">
                         <div class="row">
                             <div class="col-5"> <select name="" id="fromDollar" style="font-size: 12px;">
-                            <option value="">USD(US Dollar)</option>
-                            <option value="">EUR(EURO)</option>
-                            <option value="">GBP(British Pound)</option>
-                            <option value="JPY">USD(Japanese Yen)</option>
-                            <option value="">INR(Indian Rupee)</option>
-                            <option value="">CAD(Canadian Dollar)</option>
-                            <option value="">AUD(Australian Dollar)</option>
-                            <option value="">CNY(Chinese Yuan)</option>
-                        </select></div>
+                                    <option value="USD">USD(US Dollar)</option>
+                                    <option value="EUR">EUR(EURO)</option>
+                                    <option value="GBP">GBP(British Pound)</option>
+                                    <option value="JPY">JPY(Japanese Yen)</option>
+                                    <option value="INR">INR(Indian Rupee)</option>
+                                    <option value="CAD">CAD(Canadian Dollar)</option>
+                                    <option value="AUD">AUD(Australian Dollar)</option>
+                                    <option value="CNY">CNY(Chinese Yuan)</option>
+                                </select></div>
                             <div class="col-1 text-white">to</div>
                             <div class="col-6"> <select name="" id="toDollar" style="font-size: 12px;">
-                            <option value="">USD(US Dollar)</option>
-                            <option value="">EUR(EURO)</option>
-                            <option value="">GBP(British Pound)</option>
-                            <option value="JPY">USD(Japanese Yen)</option>
-                            <option value="">INR(Indian Rupee)</option>
-                            <option value="">CAD(Canadian Dollar)</option>
-                            <option value="">AUD(Australian Dollar)</option>
-                            <option value="">CNY(Chinese Yuan)</option>
-                        </select></div>
+                                    <option value="USD">USD(US Dollar)</option>
+                                    <option value="EUR">EUR(EURO)</option>
+                                    <option value="GBP">GBP(British Pound)</option>
+                                    <option value="JPY">JPY(Japanese Yen)</option>
+                                    <option value="INR">INR(Indian Rupee)</option>
+                                    <option value="CAD">CAD(Canadian Dollar)</option>
+                                    <option value="AUD">AUD(Australian Dollar)</option>
+                                    <option value="CNY">CNY(Chinese Yuan)</option>
+                                </select></div>
                         </div>
-                       </div>
-                    
+                    </div>
+
                     <div class="d-flex justify-content-center align-items-center flex-column">
-                        <button class="btn btn-default mt-4 btn-outline-dark w-25">Convert</button>
+                        <button type="button" onclick="convertCurrency()"
+                            class="btn btn-default mt-4 btn-outline-dark w-25">Convert</button>
                     </div>
                     <div class="d-flex justify-content-center align-items-center flex-column">
-                        <input type="text" class="form-control w-50 mt-4" placeholder="Result" >
+                        <input id="result2" readonly type="text" class="form-control w-50 mt-4" placeholder="Result">
                     </div>
+                    <div id="currency-note" class="text-center mt-3" style="color: rgb(243, 243, 243); font-size: 0.9em;">
+                    Note: This currency converter is for study/demo purposes only. 
                 </div>
+                </div>
+                
+
             </div>
         </div>
     </div>
@@ -307,4 +337,6 @@
 <script src="./calc.js"></script>
 <script src="./calculatorf.js"></script>
 <script src="./unitc.js"></script>
+<script src="./currency.js"></script>
+
 </html>
