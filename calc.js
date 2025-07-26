@@ -93,7 +93,13 @@
         toUnit.add(option2)
       })
     }
+      fromUnit.value = units[category][0];
+      toUnit.value = units[category][0];
   }
+  
+    updateUnits(); // Call on load
+ 
+  
 
   applyDefaultTheme()
 

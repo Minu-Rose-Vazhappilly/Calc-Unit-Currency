@@ -112,7 +112,7 @@
                     </div>
                     <div class="row p-1 gx-3 ">
                         <div class="col  rounded-2 text-center">
-                            <button class="btn btn-default btn-calc btn-outline-dark w-100">%</button>
+                            <button onclick="display('%')" class="btn btn-default btn-calc btn-outline-dark w-100">%</button>
                         </div>
                         <div class="col  rounded-2 text-center">
                             <button onclick="display('sin')" class="btn btn-default btn-calc btn-outline-dark w-100">sin</button>
@@ -130,7 +130,7 @@
                             <button onclick="display('log')" class="btn btn-default btn-calc btn-outline-dark w-100">log</button>
                         </div>
                         <div class="col  rounded-2 text-center">
-                            <button onclick="display('√')" class="btn btn-default btn-calc btn-outline-dark w-100">√</button>
+                            <button onclick="display('√(')" class="btn btn-default btn-calc btn-outline-dark w-100">√</button>
                         </div>
                         <div class="col rounded-2 text-center">
                             <button onclick="display('**')" class="btn btn-default btn-calc btn-outline-dark w-100">xʸ</button>
@@ -237,7 +237,7 @@
                         </select>
                     </div>
                     <div class="mt-4 d-flex justify-content-center align-items-center flex-column">
-                        <input type="number" placeholder="enter a value" class="form-control">
+                        <input id="inp" type="number" placeholder="enter a value" class="form-control">
                     </div>
                     <div class="container-fluid">
                         <div class="row mt-4">
@@ -247,10 +247,10 @@
                         </div>
                     </div>
                     <div class="mt-4 d-flex justify-content-center align-items-center flex-column">
-                        <button class=" btn btn-default btn-outline-dark">Convert</button>
+                        <button onclick="convert()" class=" btn btn-default btn-outline-dark">Convert</button>
                     </div>
                     <div class="mt-4 d-flex justify-content-center align-items-center flex-column">
-                        <input type="text" readonly placeholder="Result" class="form-control w-50">
+                        <input id="result1" type="text" readonly placeholder="Result" class="form-control">
                     </div>
                 </div>
                 <div id="currency-section" style="display:none">
@@ -306,4 +306,5 @@
 </body>
 <script src="./calc.js"></script>
 <script src="./calculatorf.js"></script>
+<script src="./unitc.js"></script>
 </html>
